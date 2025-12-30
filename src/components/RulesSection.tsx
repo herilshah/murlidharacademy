@@ -57,7 +57,7 @@ const RulesSection = () => {
     <section id="rules" className="py-24 px-4 bg-card/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-foreground font-display text-sm tracking-[0.3em] uppercase mb-4">
             Guidelines
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -76,7 +76,7 @@ const RulesSection = () => {
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <rule.icon className="w-5 h-5 text-primary" />
+                  <rule.icon className="w-5 h-5 text-foreground" />
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-foreground mb-2">

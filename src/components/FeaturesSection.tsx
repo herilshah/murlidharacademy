@@ -46,7 +46,7 @@ const FeaturesSection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-foreground font-display text-sm tracking-[0.3em] uppercase mb-4">
             Why Choose Us
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -65,7 +65,7 @@ const FeaturesSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
-                <feature.icon className="w-7 h-7 text-primary" />
+                <feature.icon className="w-7 h-7 text-foreground" />
               </div>
               <h3 className="font-display text-xl font-bold text-foreground mb-3">
                 {feature.title}

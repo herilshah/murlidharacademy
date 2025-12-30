@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
+const studioNavLinks = [
   { label: "About", href: "#about" },
   { label: "Features", href: "#features" },
   { label: "Showcase", href: "#showcase" },
@@ -10,7 +11,18 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const photographyNavLinks = [
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Contact", href: "#contact" },
+];
+
 const Navbar = () => {
+  const location = useLocation();
+  const isPhotographyPage = location.pathname === "/photography";
+  const navLinks = isPhotographyPage ? photographyNavLinks : studioNavLinks;
+  
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -22,20 +34,38 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+  const navClasses = isPhotographyPage
+    ? `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-black/90 backdrop-blur-xl border-b border-white/10" 
+          : "bg-transparent"
+      }`
+    : `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? "bg-background/90 backdrop-blur-xl border-b border-border" 
           : "bg-transparent"
-      }`}
-    >
+      }`;
+
+  const logoColor = isPhotographyPage ? "text-white" : "";
+  const logoStyle = isPhotographyPage ? {} : { color: '#D4AF37' };
+  const linkClasses = isPhotographyPage
+    ? "text-white/60 hover:text-white transition-colors font-medium text-sm tracking-wide"
+    : "text-muted-foreground hover:text-foreground transition-colors font-medium text-sm tracking-wide";
+  const mobileLinkClasses = isPhotographyPage
+    ? "text-white/60 hover:text-white transition-colors font-medium py-2"
+    : "text-muted-foreground hover:text-foreground transition-colors font-medium py-2";
+  const menuButtonClasses = isPhotographyPage
+    ? "md:hidden p-2 text-white"
+    : "md:hidden p-2 text-foreground";
+
+  return (
+    <nav className={navClasses}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="font-display font-bold text-xl text-gradient">
-            MURLIDHAR ACADEMY
-          </a>
+          <Link to={isPhotographyPage ? "/photography" : "/"} className={`font-display font-bold text-xl ${logoColor}`} style={logoStyle}>
+            {isPhotographyPage ? "PURVI PHOTOGRAPHY" : "MURLIDHAR ACADEMY"}
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
@@ -43,16 +73,23 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium text-sm tracking-wide"
+                className={linkClasses}
               >
                 {link.label}
               </a>
             ))}
+            {/* Cross-link to other page */}
+            <Link
+              to={isPhotographyPage ? "/" : "/photography"}
+              className={linkClasses}
+            >
+              {isPhotographyPage ? "Dance Studio" : "Photography"}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className={menuButtonClasses}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -68,12 +105,20 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium py-2"
+                  className={mobileLinkClasses}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
+              {/* Cross-link to other page */}
+              <Link
+                to={isPhotographyPage ? "/" : "/photography"}
+                className={mobileLinkClasses}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {isPhotographyPage ? "Dance Studio" : "Photography"}
+              </Link>
             </div>
           </div>
         )}

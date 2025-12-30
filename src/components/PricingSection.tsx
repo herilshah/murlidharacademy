@@ -5,7 +5,7 @@ const pricingPlans = [
   {
     name: "Quick Session",
     duration: "1 Hour",
-    price: "₹1,200",
+    price: "₹1,000",
     description: "Perfect for short practice sessions",
     features: [
       "Full studio access",
@@ -43,7 +43,7 @@ const PricingSection = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-foreground font-display text-sm tracking-[0.3em] uppercase mb-4">
             Pricing
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -79,7 +79,7 @@ const PricingSection = () => {
                   {plan.name}
                 </h3>
                 <div className="mb-2">
-                  <span className="font-display text-4xl font-bold text-gradient">
+                  <span className="font-display text-4xl font-bold text-foreground">
                     {plan.price}
                   </span>
                 </div>
@@ -92,7 +92,7 @@ const PricingSection = () => {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3 h-3 text-primary" />
+                      <Check className="w-3 h-3 text-foreground" />
                     </div>
                     <span className="text-muted-foreground text-sm">{feature}</span>
                   </li>
@@ -111,7 +111,7 @@ const PricingSection = () => {
         </div>
 
         <p className="text-center text-muted-foreground mt-8 text-sm">
-          * ₹1,000 booking charges applicable for all reservations
+          * ₹200 charges extra applicable for The Wall of Amoeba
         </p>
       </div>
     </section>

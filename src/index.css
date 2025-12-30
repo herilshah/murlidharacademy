@@ -6,47 +6,66 @@
 
 @layer base {
   :root {
-    --background: 240 10% 6%;
-    --foreground: 0 0% 98%;
+    /* Krishna Blue & Peacock Theme */
+    /* Main Background (Night) */
+    --background: 220 60% 7%;
+    --foreground: 220 100% 98%;
 
-    --card: 240 10% 10%;
-    --card-foreground: 0 0% 98%;
+    /* Card Background */
+    --card: 220 60% 12%;
+    --card-foreground: 220 100% 98%;
 
-    --popover: 240 10% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 60% 12%;
+    --popover-foreground: 220 100% 98%;
 
-    --primary: 280 100% 65%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Electric Divine Blue (CTA) */
+    --primary: 220 65% 32%;
+    --primary-foreground: 220 100% 98%;
 
-    --secondary: 240 10% 15%;
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary Surface */
+    --secondary: 220 65% 19%;
+    --secondary-foreground: 220 100% 98%;
 
-    --muted: 240 10% 20%;
-    --muted-foreground: 240 5% 65%;
+    /* Muted Surface */
+    --muted: 220 60% 24%;
+    --muted-foreground: 220 30% 65%;
 
-    --accent: 45 100% 55%;
-    --accent-foreground: 240 10% 6%;
+    /* Accent - Sacred Gold */
+    --accent: 45 65% 52%;
+    --accent-foreground: 220 60% 7%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 280 50% 25%;
-    --input: 240 10% 20%;
-    --ring: 280 100% 65%;
+    /* Border - Blue Border with opacity */
+    --border: 220 65% 32%;
+    --input: 220 60% 24%;
+    --ring: 220 65% 32%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --glow-primary: 0 0 30px hsl(280 100% 65% / 0.5);
-    --glow-accent: 0 0 30px hsl(45 100% 55% / 0.5);
-    --gradient-hero: linear-gradient(135deg, hsl(280 100% 65% / 0.2) 0%, hsl(200 100% 60% / 0.1) 50%, hsl(45 100% 55% / 0.1) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(240 10% 12%) 0%, hsl(240 10% 8%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(280 100% 65%) 0%, hsl(320 100% 60%) 100%);
+    /* Custom Krishna Blue & Peacock design tokens */
+    /* Blue Glow */
+    --glow-primary: 0 0 30px rgba(31, 60, 136, 0.45);
+    /* Gold Glow */
+    --glow-accent: 0 0 30px rgba(212, 175, 55, 0.35);
+    /* Peacock Gradient */
+    --gradient-hero: linear-gradient(135deg, rgba(11, 28, 77, 0.3) 0%, rgba(15, 42, 122, 0.2) 50%, rgba(27, 156, 133, 0.2) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 60% 12%) 0%, hsl(220 60% 8%) 100%);
+    /* Divine Glow Gradient */
+    --gradient-accent: linear-gradient(
+      135deg,
+      #0B1C4D,
+      #0F2A7A,
+      #1B9C85
+    );
+    /* Peacock Gradient */
+    --gradient-peacock: linear-gradient(135deg, #0B1C4D, #0F2A7A, #1B9C85);
   }
 
   .dark {
-    --background: 240 10% 6%;
-    --foreground: 0 0% 98%;
+    --background: 220 60% 7%;
+    --foreground: 220 100% 98%;
   }
 }
 
@@ -106,7 +125,7 @@
   }
 
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
 
@@ -121,10 +140,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(280 100% 65% / 0.4);
+    box-shadow: 0 0 20px rgba(31, 60, 136, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px hsl(280 100% 65% / 0.7);
+    box-shadow: 0 0 40px rgba(31, 60, 136, 0.7);
   }
 }
 
@@ -142,26 +161,54 @@
 @keyframes fade-in {
   from {
     opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    filter: blur(4px);
   }
   to {
     opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling - Krishna Blue theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(240 10% 10%);
+  background: hsl(220 60% 12%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(280 100% 65% / 0.5);
+  background: rgba(31, 60, 136, 0.5);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(280 100% 65% / 0.7);
+  background: rgba(31, 60, 136, 0.7);
+}
+
+/* Photography theme - Black and White */
+.photography-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.photography-theme * {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Photography scrollbar styling */
+.photography-theme ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.photography-theme ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.photography-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }

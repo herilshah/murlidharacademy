@@ -23,22 +23,19 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <div className="animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
-          <p className="text-primary font-display text-sm md:text-base tracking-[0.3em] uppercase mb-4">
+          <p className="text-foreground font-display font-bold text-sm md:text-base tracking-[0.3em] uppercase mb-4">
             Premium Dance Studio
           </p>
         </div>
         
-        <h1 
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in"
-          style={{ animationDelay: "0.4s", animationFillMode: "both" }}
-        >
-          <span className="text-gradient">MURLIDHAR</span>
+        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+          <span className="text-foreground">MURLIDHAR</span>
           <br />
           <span className="text-foreground">ACADEMY</span>
         </h1>
         
         <p 
-          className="text-xl md:text-2xl text-foreground/70 font-light italic mb-6 animate-fade-in"
+          className="text-2xl md:text-3xl lg:text-4xl text-foreground font-black italic mb-6 animate-fade-in"
           style={{ animationDelay: "0.6s", animationFillMode: "both" }}
         >
           Where Rhythm Meets Devotion
@@ -78,7 +75,7 @@ const HeroSection = () => {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float cursor-pointer"
         onClick={() => scrollToSection("about")}
       >
-        <ChevronDown className="w-8 h-8 text-primary" />
+        <ChevronDown className="w-8 h-8 text-foreground" />
       </div>
     </section>
   );

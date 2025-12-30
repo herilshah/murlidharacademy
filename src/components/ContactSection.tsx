@@ -11,7 +11,7 @@ const ContactSection = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-foreground font-display text-sm tracking-[0.3em] uppercase mb-4">
             Get In Touch
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -36,31 +36,36 @@ const ContactSection = () => {
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                    <Phone className="w-6 h-6 text-primary" />
+                    <Phone className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <p className="text-muted-foreground text-sm">Phone</p>
-                    <p className="text-foreground font-semibold group-hover:text-primary transition-colors">
+                    <p className="text-foreground font-semibold group-hover:text-foreground transition-colors">
                       +91 8356024721
+                    </p>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://maps.app.goo.gl/c1RtpJLCtWbAgvQd6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                    <MapPin className="w-6 h-6 text-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground text-sm">Location</p>
+                    <p className="text-foreground font-semibold group-hover:text-primary transition-colors">
+                      121 Victory Platinum SV road Kandivali (W)
                     </p>
                   </div>
                 </a>
 
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground text-sm">Location</p>
-                    <p className="text-foreground font-semibold">
-                      Kandivali West, Mumbai
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-primary" />
+                    <Clock className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <p className="text-muted-foreground text-sm">Availability</p>
@@ -97,7 +102,7 @@ const ContactSection = () => {
           {/* Map */}
           <div className="glass-card rounded-2xl overflow-hidden h-[400px] lg:h-auto">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60279.01756289941!2d72.8075736!3d19.204566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6de26242c7d%3A0x5f66ebf43589ed09!2sKandivali%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1703676000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.1234567890123!2d72.8493822!3d19.2047403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b71ab749b021%3A0xd676e86495fabbf5!2sMurlidhar%20Academy!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}

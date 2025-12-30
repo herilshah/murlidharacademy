@@ -4,9 +4,6 @@ import studio2 from "@/assets/studio-2.jpg";
 import studio3 from "@/assets/studio-3.jpg";
 import studio4 from "@/assets/studio-4.jpg";
 import studio5 from "@/assets/studio-5.jpg";
-import amoebaWall from "@/assets/amoeba-wall.jpg";
-import amoebaWall2 from "@/assets/amoeba-wall-2.jpg";
-import amoebaWall3 from "@/assets/amoeba-wall-3.jpg";
 import studioVideo from "@/assets/studio-video.mp4";
 import { Play } from "lucide-react";
 import {
@@ -30,9 +27,6 @@ const VideoShowcase = () => {
     { src: studio3, alt: "Studio view 3", type: "image" },
     { src: studio4, alt: "Studio view 4", type: "image" },
     { src: studio5, alt: "Studio view 5", type: "image" },
-    { src: amoebaWall, alt: "Amoeba wall design", type: "image" },
-    { src: amoebaWall2, alt: "Amoeba wall design 2", type: "image" },
-    { src: amoebaWall3, alt: "Amoeba wall design 3", type: "image" },
     { src: studioVideo, alt: "Studio video showcase", type: "video" },
   ];
 
@@ -40,7 +34,7 @@ const VideoShowcase = () => {
     <section id="showcase" className="py-24 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-foreground font-display text-sm tracking-[0.3em] uppercase mb-4">
             Visual Experience
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
